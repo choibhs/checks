@@ -1,4 +1,5 @@
 check50: 
+  checks: true
   files: &check50_files
     - !exclude "*"
     - !require hello.c
