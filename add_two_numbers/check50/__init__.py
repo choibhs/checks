@@ -16,7 +16,7 @@ class AddTwoNumbers(Checks):
     @check("compiles")
     def test1(self):
         """"""
-        self.spawn("./add_two_numbers").stdin("22").stdin("24").stdout(number(46), "46\n").exit(0)
+        self.spawn("./add_two_numbers").stdin("22").stdin("24").stdout("Total = 46\n").exit(0)
 
 def number(num):
     return "(^|[^\d]){}[^\d]".format(num)
