@@ -16,18 +16,12 @@ class ValidateThree(Checks):
     @check("compiles")
     def test1(self):
         """"""
-        self.spawn(("./validate_three").stdin("24").stdout("That response is valid\n")
-            .stdin("24").stdout("That response is invalid\n")
-            .stdin("24").stdout("That response is invalid\n")
-            .exit(0))
+        self.spawn("./validate_three").stdin("24").stdout("That response is valid\n").stdin("24").stdout("That response is invalid\n").stdin("24").stdout("That response is invalid\n").exit(0)
 
     @check("compiles")
     def test2(self):
         """"""
-        self.spawn(("./validate_three").stdin("0").stdout("That response is invalid\n")
-            .stdin("0").stdout("That response is valid\n")
-            .stdin("30").stdout("That response is valid\n")
-            exit(0))
+        self.spawn("./validate_three").stdin("0").stdout("That response is invalid\n").stdin("0").stdout("That response is valid\n").stdin("30").stdout("That response is valid\n").exit(0)
 
 def number(num):
     return "(^|[^\d]){}[^\d]".format(num)
