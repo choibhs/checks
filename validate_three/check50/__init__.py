@@ -21,7 +21,7 @@ class ValidateThree(Checks):
     @check("compiles")
     def test2(self):
         """"""
-        self.spawn("./validate_three").stdin("0").stdout("That response is invalid\n").stdin("0").stdout("That response is valid\n").stdin("30").stdout("That response is valid\n").exit(0)
+        self.spawn("./validate_three").stdin("0").stdout("That response is invalid\n").stdin("2").stdout("That response is valid\n").stdin("30").stdout("That response is valid\n").exit(0)
 
 def number(num):
     return "(^|[^\d]){}[^\d]".format(num)
