@@ -23,7 +23,7 @@ class Loops(Checks):
     #    """"""
     #    self.spawn("./loops").stdin("0").stdout("That response is invalid\n").stdin("2").stdout("That response is valid\n").stdin("30").stdout("That response is valid\n").exit(0)
 
-@check("compiles")
+    @check("compiles")
     def test_reject_negative(self):
         """rejects a negative input like -.1"""
         self.spawn("./loops").stdin("-1").reject()
