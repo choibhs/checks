@@ -21,7 +21,7 @@ class Loops(Checks):
     @check("compiles")
     def test1(self):
         """Correct for inputs 6 and 2"""
-        self.spawn("./loops").stdin("6").stdout("0\n1\n2\n3\n4\n5\n6").stdin("2").stdout("2 x 0 = 0\n2 x 1 = 2\n2 x 2 = 6\n\n").exit(0)
+        self.spawn("./loops").stdin("6").stdout("0\n1\n2\n3\n4\n5\n6").stdin("2").stdout("2 x 0 = 0\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 8\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n2 x 11 = 22\n2 x 12 = 24\n").exit(0)
 
     #@check("compiles")
     #def test2(self):
