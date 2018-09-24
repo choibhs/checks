@@ -16,12 +16,27 @@ class Loops(Checks):
     @check("compiles")
     def test1(self):
         """"""
-        self.spawn("./loops").stdin("0").stdin("3").stdout("0\n1\n2\n3\n").exit(0)
+        self.spawn("./loops").stdin("3").stdout("0\n1\n2\n3\n").stdin("3").stdout("3 x 0 = 0\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n3 x 11 = 33\n3 x 12 = 36\n").exit(0)
 
     #@check("compiles")
     #def test2(self):
     #    """"""
     #    self.spawn("./loops").stdin("0").stdout("That response is invalid\n").stdin("2").stdout("That response is valid\n").stdin("30").stdout("That response is valid\n").exit(0)
+
+@check("compiles")
+    def test_reject_negative(self):
+        """rejects a negative input like -.1"""
+        self.spawn("./loops").stdin("-1").reject()
+
+    @check("compiles")
+    def test_reject_foo(self):
+        """rejects a non-numeric input of "foo" """
+        self.spawn("./loops").stdin("foo").reject()
+
+    @check("compiles")
+    def test_reject_empty(self):
+        """rejects a non-numeric input of "" """
+        self.spawn("./loops").stdin("").reject()
 
 def number(num):
     return "(^|[^\d]){}[^\d]".format(num)
