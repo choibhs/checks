@@ -16,7 +16,7 @@ class multiples2(Checks):
     @check("compiles")
     def test1(self):
         """Correct for inputs 24 and 4"""
-        self.spawn("./multiples2").stdin("24").stdin("4").stdout("All multiples2 of 4 <= 24 are:\n24\n20\n16\n12\n8\n4\n0\n").exit(0)
+        self.spawn("./multiples2").stdin("24").stdin("4").stdout("All multiples of 4 <= 24 are:\n24\n20\n16\n12\n8\n4\n0\n").exit(0)
 
     @check("compiles")
     def test2(self):
