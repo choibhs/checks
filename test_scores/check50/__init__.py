@@ -17,7 +17,7 @@ class TestScores(Checks):
     def test0(self):
         """Correct for input 94 debug test"""
         self.spawn("./test_scores").stdin("94")\
-            .stdout(File("2.txt")).exit(0)
+            .stdout(File("1.txt")).exit(0)
 
     #@check("compiles")
     #def test0(self):
