@@ -1,7 +1,7 @@
 from check50 import *
 
 
-class test_scores(Checks):
+class TestScores(Checks):
 
     @check()
     def exists(self):
@@ -25,8 +25,8 @@ class test_scores(Checks):
 
     @check("compiles")
     def test3(self):
-        """Correct for inputs -1 101 0 94"""
-        self.spawn("./test_scores").stdin("-1").stdin("101").stdin("0").stdin("94").stdout("Number of A's: 1 (100.0%)\nNumber of B's: 0 (0.0%)\nNumber of C's: 0 (0.0%)\nNumber below C: 0 (0.0%)\n\n").stdin(4).stdout("Number of A's: 1 (50.0%)\nNumber of B's: 0 (0.0%)\nNumber of C's: 0 (0.0%)\nNumber below C: 1 (50.0%)\n\n").exit(0)
+        """Correct for inputs -1 101 94 0"""
+        self.spawn("./test_scores").stdin("-1").stdin("101").stdin("94").stdout("Number of A's: 1 (100.0%)\nNumber of B's: 0 (0.0%)\nNumber of C's: 0 (0.0%)\nNumber below C: 0 (0.0%)\n\n").stdin(0).stdout("Number of A's: 1 (50.0%)\nNumber of B's: 0 (0.0%)\nNumber of C's: 0 (0.0%)\nNumber below C: 1 (50.0%)\n\n").exit(0)
 
     @check("compiles")
     def test_reject_foo(self):
