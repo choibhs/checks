@@ -15,8 +15,9 @@ class TestScores(Checks):
 
     @check("compiles")
     def test0(self):
-        """Correct for input 94"""
-        self.spawn("./test_scores").stdin("94").stdout("Number of A's: 1 (100.0 percent)\n").exit(0)
+        """Correct for input 94 debug test"""
+        self.spawn("./test_scores").stdin("94")\
+            .stdout("Number of A's: 1 (100.0 percent)\n").exit(0)
 
     @check("compiles")
     def test1(self):
@@ -25,7 +26,7 @@ class TestScores(Checks):
 
     @check("compiles")
     def test2(self):
-        """Correct for input 94"""
+        """Correct for input 94 and 4"""
         self.spawn("./test_scores").stdin("94").stdout("Number of A's: 1 (100.0%)\nNumber of B's: 0 (0.0%)\nNumber of C's: 0 (0.0%)\nNumber below C: 0 (0.0%)\n\n").stdin(4).stdout("Number of A's: 1 (50.0%)\nNumber of B's: 0 (0.0%)\nNumber of C's: 0 (0.0%)\nNumber below C: 1 (50.0%)\n\n").exit(0)
 
     @check("compiles")
