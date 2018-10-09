@@ -17,7 +17,7 @@ class TestScores(Checks):
     def test0(self):
         """Correct for input 94 debug test"""
         self.spawn("./test_scores").stdin("94")\
-            .stdout("Number of A's: 1 (100.0 percent)\n").exit(0)
+            .stdout("Number of A's: 1 (100.0 percent)").exit(0)
 
     @check("compiles")
     def test1(self):
