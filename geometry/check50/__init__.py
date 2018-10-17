@@ -20,13 +20,18 @@ class Geometry(Checks):
 
     @check("compiles")
     def test2(self):
-        """Compiles and then runs invalid rectangle lengths, then area of rectangle 4 x 5"""
+        """Compiles and then runs invalid rectangle lengths (negative and 0), then area of rectangle 4 x 5"""
         self.spawn("./geometry").stdin("1").stdin("1").stdin("-1").stdin("0").stdin("4").stdin("5").stdout("The rectangle's area is 20.\n").exit(0)
 
-    #@check("compiles")
-    #def test2(self):
-    #    """"""
-    #    self.spawn("./geometry").stdin("0").stdout("That response is invalid\n").stdin("2").stdout("That response is valid\n").stdin("30").stdout("That response is valid\n").exit(0)
+    @check("compiles")
+    def test3(self):
+        """Compiles and then runs invalid menu item 2, then area of square 4"""
+        self.spawn("./geometry").stdin("1").stdin("-1").stdin("4").stdin("2").stdin("4").stdout("The square's area is 16.\n").exit(0)
+
+    @check("compiles")
+    def test4(self):
+        """Compiles and then runs invalid square length negative or 0, then area of square 7"""
+        self.spawn("./geometry").stdin("1").stdin("2").stdin("-7").stdin("0").stdin("7").stdout("The square's area is 16.\n").exit(0)
 
 def number(num):
     return "(^|[^\d]){}[^\d]".format(num)
