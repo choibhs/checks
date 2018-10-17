@@ -16,7 +16,7 @@ class Geometry(Checks):
     @check("compiles")
     def test1(self):
         """Compiles and then run area of rectangle"""
-        self.spawn("./geometry").stdin("-1").stdin("0").stdin("1").stdin("1").stdout("10").stdout("10").exit(0)
+        self.spawn("./geometry").stdin("-1").stdin("0").stdin("1").stdin("1").stdin("10").stdin("10").stdout("The rectangle's area is 100\n").exit(0)
 
     #@check("compiles")
     #def test2(self):
