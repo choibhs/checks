@@ -46,12 +46,12 @@ class Geometry(Checks):
     @check("compiles")
     def test7(self):
         """Compiles and then runs invalid square length negative or 0, then perimeter of square 7"""
-        self.spawn("./geometry").stdin("2").stdin("2").stdin("-7").stdin("0").stdin("7").stdout("The square's area is 49.\n").exit(0)
+        self.spawn("./geometry").stdin("2").stdin("2").stdin("-7").stdin("0").stdin("7").stdout("The square's perimeter is 28.\n").exit(0)
 
     @check("compiles")
     def test8(self):
         """Compiles and then runs invalid triangle length negative or 0, then perimeter of triangle 3, 4, 5"""
-        self.spawn("./geometry").stdin("2").stdin("3").stdin("-7").stdin("0").stdin("7").stdin("3").stdin("4").stdin("5").stdout("The triangle's area is 12.\n").exit(0)
+        self.spawn("./geometry").stdin("2").stdin("3").stdin("-7").stdin("0").stdin("7").stdin("3").stdin("4").stdin("5").stdout("The triangle's perimeter is 12.\n").exit(0)
 
 
 def number(num):
