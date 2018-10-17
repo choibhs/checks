@@ -1,3 +1,6 @@
+# Two issues with this check50: can't have () in answer,
+# and program has to end.
+
 from check50 import *
 
 
@@ -18,15 +21,16 @@ class TestScores(Checks):
         """Correct for input 94"""
         self.spawn("./test_scores").stdin("94").stdout("Number of A's: 1, 100.0%\nNumber of B's: 0, 0.0%\nNumber of C's: 0, 0.0%\nNumber below C: 0, 0.0%\n\n").exit(0)
 
-    @check("compiles")
-    def test2(self):
-        """Correct for input 94 and 4"""
-        self.spawn("./test_scores").stdin("94").stdout("Number of As: 1 (100.0%)\nNumber of Bs: 0 (0.0%)\nNumber of Cs: 0 (0.0%)\nNumber below C: 0 (0.0%)\n\n").stdin(4).stdout("Number of As: 1 (50.0%)\nNumber of Bs: 0 (0.0%)\nNumber of Cs: 0 (0.0%)\nNumber below C: 1 (50.0%)\n\n").exit(0)
 
-    @check("compiles")
-    def test3(self):
-        """Correct for inputs -1 101 94 0"""
-        self.spawn("./test_scores").stdin("-1").stdin("101").stdin("94").stdout("Number of As: 1 (100.0%)\nNumber of Bs: 0 (0.0%)\nNumber of Cs: 0 (0.0%)\nNumber below C: 0 (0.0%)\n\n").stdin(0).stdout("Number of As: 1 (50.0%)\nNumber of Bs: 0 (0.0%)\nNumber of Cs: 0 (0.0%)\nNumber below C: 1 (50.0%)\n\n").exit(0)
+    #@check("compiles")
+    #def test2(self):
+    #    """Correct for input 94 and 4"""
+    #    self.spawn("./test_scores").stdin("94").stdout("Number of As: 1 (100.0%)\nNumber of Bs: 0 (0.0%)\nNumber of Cs: 0 (0.0%)\nNumber below C: 0 (0.0%)\n\n").stdin(4).stdout("Number of As: 1 (50.0%)\nNumber of Bs: 0 (0.0%)\nNumber of Cs: 0 (0.0%)\nNumber below C: 1 (50.0%)\n\n").exit(0)
+
+    #@check("compiles")
+    #def test3(self):
+    #    """Correct for inputs -1 101 94 0"""
+    #    ""    self.spawn("./test_scores").stdin("-1").stdin("101").stdin("94").stdout("Number of As: 1 (100.0%)\nNumber of Bs: 0 (0.0%)\nNumber of Cs: 0 (0.0%)\nNumber below C: 0 (0.0%)\n\n").stdin(0).stdout("Number of As: 1 (50.0%)\nNumber of Bs: 0 (0.0%)\nNumber of Cs: 0 (0.0%)\nNumber below C: 1 (50.0%)\n\n").exit(0)
 
     @check("compiles")
     def test_reject_foo(self):
