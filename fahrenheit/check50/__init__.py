@@ -59,19 +59,19 @@ class Fahrenheit(Checks):
         self.spawn("./fahrenheit").stdin("2").stdin("212.00").stdout(number(100.0), "100.0\n").exit(0)
 
     @check("compiles")
-    def testneg40(self):
+    def testneg40b(self):
         """-40 degrees F yields -40.0 degrees C"""
         self.spawn("./fahrenheit").stdin("2").stdin("-40").stdout(number(-40.0), "-40.0\n").exit(0)
 
     @check("compiles")
-    def test18point3(self):
-        """18.3 degrees F yields 65.3 degrees C"""
-        self.spawn("./fahrenheit").stdin("2").stdin("18.5").stdout(number(65.3), "65.3\n").exit(0)
+    def test65point3(self):
+        """65.3 degrees F yields 18.5 degrees C"""
+        self.spawn("./fahrenheit").stdin("2").stdin("65.3").stdout(number(18.5), "18.5\n").exit(0)
 
     @check("compiles")
     def testneg190points2(self):
         """-190.2 degrees F yields -123.45678 degrees C"""
-        self.spawn("./fahrenheit").stdin("2").stdin("190.2").stdout(number(-123.5), "-123.5\n").exit(0)
+        self.spawn("./fahrenheit").stdin("2").stdin("-190.2").stdout(number(-123.5), "-123.5\n").exit(0)
 
     @check("compiles")
     def test_reject_foo(self):
