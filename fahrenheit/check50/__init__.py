@@ -71,7 +71,7 @@ class Fahrenheit(Checks):
     @check("compiles")
     def testneg190points2(self):
         """-190.2 degrees F yields -123.45678 degrees C"""
-        self.spawn("./fahrenheit").stdin("2").stdin("-190.2").stdout(number(-123.5), "-123.5\n").exit(0)
+        self.spawn("./fahrenheit").stdin("2").stdin("-190.2").stdout(number(-123.4), "-123.4\n").exit(0)
 
     @check("compiles")
     def test_reject_foo(self):
