@@ -12,4 +12,4 @@ class Arrays(Checks):
     @check("exists")
     def compiles(self):
         """arrays.c compiles."""
-        self.spawn("clang -std=c11 -o arrays arrays.c").exit(0)
+        self.spawn("clang -std=c11 -o arrays arrays.c").exit(1)
