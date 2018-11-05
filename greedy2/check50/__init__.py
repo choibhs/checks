@@ -32,13 +32,13 @@ class Greedy2(Checks):
 
     @check("compiles")
     def test160(self):
-        """input of 1.6 yields output of 7"""
-        self.spawn("./greedy2").stdin("1.6").stdout(coins(7), "7\n").exit(0)
+        """input of 1.6 yields output of 3"""
+        self.spawn("./greedy2").stdin("1.6").stdout(coins(3), "3\n").exit(0)
 
     @check("compiles")
     def test230(self):
-        """input of 23 yields output of 92"""
-        self.spawn("./greedy2").stdin("23").stdout(coins(92), "92\n").exit(0)
+        """input of 23 yields output of 4"""
+        self.spawn("./greedy2").stdin("23").stdout(coins(4), "4\n").exit(0)
 
     @check("compiles")
     def test04(self):
@@ -47,15 +47,13 @@ class Greedy2(Checks):
 
     @check("compiles")
     def test420(self):
-        """input of 4.2 yields output of 17"""
-        expected = "17\n"
+        """input of 4.2 yields output of 6"""
+        expected = "6\n"
         actual = self.spawn("./greedy2").stdin("4.2").stdout()
-        if not re.search(coins(17), actual):
+        if not re.search(coins(6), actual):
             err = Error(Mismatch(expected, actual))
             if re.search(coins(18), actual):
-                err.helpers = "Did you forget to includes 20 cent and 2 cent coins for Euros?"
-            elif re.search(coins(22), actual):
-                err.helpers = "Did you forget to round your input to the nearest cent?"
+                err.helpers = "Did you forget to includes dollars, 2 cent coins, etc.?"
             raise err
 
     @check("compiles")
