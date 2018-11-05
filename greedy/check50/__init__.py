@@ -52,6 +52,11 @@ class Greedy(Checks):
             raise err
 
     @check("compiles")
+    def test04(self):
+        """input of 0.04 yields output of 4"""
+        self.spawn("./greedy2").stdin("0.04").stdout(coins(4), "4\n").exit(0)
+
+    @check("compiles")
     def test_reject_negative(self):
         """rejects a negative input like -.1"""
         self.spawn("./greedy").stdin("-1").reject()
