@@ -49,7 +49,3 @@ class Binary(Checks):
     def test_reject_empty(self):
         """rejects a non-numeric input of "" """
         self.spawn("./binary").stdin("").reject()
-
-
-def coins(num):
-    return r"(^|[^\d]){}(?!\d)".format(num)
