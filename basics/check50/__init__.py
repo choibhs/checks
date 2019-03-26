@@ -16,7 +16,11 @@ class Basics(Checks):
     @check("compiles")
     def test1(self):
         """"""
-        self.spawn("./basics").stdin("22").stdin("24").stdout("Total = 46\n").exit(0)
+        self.spawn("./basics").stdin("Mr. T").stdout("Hello, Mr. T.\n")\
+                .stdin("20").stdout("You are 20 years old\n").stdout("In twenty years you will be 40 years old\n")\
+                .stdin(1).stdin(2).stdin(3).stdin(4).stdin(4)\
+                .stdout("Your zip code is: 12345").stdout("Your zip code reversed is: 54321")\
+                .exit(0)
 
 def number(num):
     return "(^|[^\d]){}[^\d]".format(num)
