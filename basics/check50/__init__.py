@@ -16,10 +16,9 @@ class Basics(Checks):
     @check("compiles")
     def test1(self):
         """"""
-        self.spawn("./basics").stdin("Mr. T").stdout("Hello, Mr. T.\n")\
-                .stdin(1).stdin(2).stdin(3).stdin(4).stdin(4)\
+        self.spawn("./basics").stdin("Mr. T").stdout("Hello, Mr. T.\n").stdin("20").stdout("You are 20 years old\nIn twenty years you will be 40\n")\
+                .stdin(1).stdin(2).stdin(3).stdin(4).stdin(5)                \
                 .stdout("Your zip code is: 12345\nYour zip code reversed is: 54321")\
-                .stdin("20").stdout("You are 20 years old\nIn twenty years you will be 40\n")\
                 .exit(0)
 
 def number(num):
