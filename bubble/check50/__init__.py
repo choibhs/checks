@@ -15,8 +15,7 @@ class Bubble(Checks):
 
     @check("compiles")
     def test(self):
-        self.spawn("./bubble").stdout("ASDF").exit(0)
-   #    self.spawn("./bubble").stdout("Generating 1000 random arrays (beep beep boop boop)\nAverage number of swaps: 20.27\n").exit(0)
+       self.spawn("./bubble").stdout("Generating 1000 random arrays \(beep beep boop boop\)\nAverage number of swaps: 20.27\n").exit(0)
 
 def number(num):
     return "(^|[^\d]){}[^\d]".format(num)
