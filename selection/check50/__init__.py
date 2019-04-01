@@ -15,7 +15,7 @@ class Selection(Checks):
 
     @check("compiles")
     def test(self):
-       self.spawn("./selection").stdout("Generating 1000 random arrays \(beep beep boop boop\)\nAverage number of swaps: 7\n").exit(0)
+       self.spawn("./selection").stdout("Generating 1000 random arrays \(beep beep boop boop\)\nAverage number of swaps: 6.61\n").exit(0)
 
 def number(num):
     return "(^|[^\d]){}[^\d]".format(num)
