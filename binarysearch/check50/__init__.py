@@ -15,7 +15,7 @@ class Binarysearch(Checks):
 
     @check("compiles")
     def test(self):
-       self.spawn("./binarysearch").stdout("Generating 1000 random arrays \(beep beep boop boop\)\nAverage number of checks: 4.45\n").exit(0)
+       self.spawn("./binarysearch").stdout("Generating 1000 random arrays \(beep beep boop boop\)\nAverage number of checks: 3.25\n").exit(0)
 
 def number(num):
     return "(^|[^\d]){}[^\d]".format(num)
