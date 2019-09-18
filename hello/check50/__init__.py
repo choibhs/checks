@@ -1,26 +1,25 @@
-import re
+import check50
+import check50.c
 
-from check50 import *
+@check50.check()
+def exists():
+    """hello.c exists."""
+    check50.exists("hello.c")
 
-class Hello(Checks):
+@check50.check(exists)
+def compiles():
+    """hello.c compiles."""
+    check50.c.compile("hello.c", lcs50=True)
 
-    @check()
-    def exists(self):
-        """hello.c exists."""
-        self.require("hello.c")
+@check50.check(compiles)
+def prints_hello():
+    """prints "hello, world\\n" """
+    from re import match
 
-    @check("exists")
-    def compiles(self):
-        """hello.c compiles."""
-        self.spawn("clang -std=c11 -o hello hello.c").exit(0)
-
-    @check("compiles")
-    def prints_hello(self):
-        """prints "hello, world\\n" """
-        expected = "[Hh]ello, world!?\n"
-        actual = self.spawn("./hello").stdout()
-        if not re.match(expected, actual):
-            err = Error(Mismatch("hello, world\n", actual))
-            if re.match(expected[:-1], actual):
-                err.helpers = "Did you forget a newline (\"\\n\") at the end of your printf string?"
-            raise err
+    expected = "[Hh]ello, world!?\n"
+    actual = check50.run("./hello").stdout()
+    if not match(expected, actual):
+        help = None
+        if match(expected[:-1], actual):
+            help = r"did you forget a newline ('\n') at the end of your printf string?"
+        raise check50.Mismatch("hello, world\n", actual, help=help)
