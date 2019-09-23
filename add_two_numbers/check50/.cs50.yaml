@@ -1,4 +1,8 @@
 check50:
+  files: &check50_files
+    - !exclude "*"
+    - !require add_two_numbers.c
+
   checks:
     two positive numbers:
     - run: ./add_two_numbers
@@ -21,3 +25,6 @@ check50:
        - -14
       stdout: Total = -26
       exit: 0 # expect program to exit with exitcode 0
+
+submit50:
+  files: *check50_files
