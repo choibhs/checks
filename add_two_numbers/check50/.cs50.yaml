@@ -5,19 +5,19 @@ check50:
       stdin:
        - 1
        - 4
-      stdout: 5
+      stdout: Total = 5
       exit: 0 # expect program to exit with exitcode 0
     one pos one neg:
     - run: ./add_two_numbers
       stdin:
         - 11
         - -4
-      stdout: 7
+      stdout: Total = 7
       exit: 0 # expect program to exit with exitcode 0
     two neg:
     - run: ./add_two_numbers
       stdin:
        - -12
        - -14
-      stdout: -26
+      stdout: Total = -26
       exit: 0 # expect program to exit with exitcode 0
