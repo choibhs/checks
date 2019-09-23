@@ -1,9 +1,4 @@
 check50:
-  files: &check50_files
-    - !exclude "*"
-    - !require add_two_numbers
-    - !require add_two_numbers.c
-
   checks:
     two positive numbers:
     - run: ./add_two_numbers
