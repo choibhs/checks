@@ -25,3 +25,8 @@ def one_try(self):
 def three_tries(self):
     """Check inputs: 54, 52, 53"""
     check50.run("./guessing").stdin("54").stdout("That number is too high\n").stdin("52").stdout("That number is too low\n").stdin("53").stdout("You guessed the secret number!\n").exit(0)
+
+@check50.check(compiles)
+def three_tries_plus_two_invalid(self):
+    """Check inputs: 200, 54, -2, 52, 53"""
+    check50.run("./guessing").stdin("200").stdout("Invalid input\n").stdin("54").stdout("That number is too high\n").stdin("-2").stdout("Invalid input\n").stdin("52").stdout("That number is too low\n").stdin("53").stdout("You guessed the secret number!\n").exit(0)
