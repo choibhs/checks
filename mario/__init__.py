@@ -23,12 +23,6 @@ def test0():
     check50.run("./mario").stdin("0").reject()
 
 @check50.check(compiles)
-def test1():
-    """handles a height of 1 correctly"""
-    out = check50.run("./mario").stdin("1").stdout()
-    check_pyramid(out, open("1.txt").read())
-
-@check50.check(compiles)
 def test2():
     """handles a height of 2 correctly"""
     out = check50.run("./mario").stdin("2").stdout()
