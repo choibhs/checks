@@ -4,13 +4,13 @@ import check50.c
 
 @check50.check()
 def exists():
-    """cash exists"""
+    """binary exists"""
     check50.exists("binary.c")
 
 
 @check50.check(exists)
 def compiles():
-    """cash compiles"""
+    """binary compiles"""
     check50.c.compile("binary.c", lcs50=True)
 
 @check50.check(compiles)
