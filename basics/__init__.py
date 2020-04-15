@@ -22,7 +22,7 @@ def basic_test(self):
 @check50.check(compiles)
 def second_test(self):
         """Second test"""
-        check50.run("./basics").stdin("SpongeBob").stdout("Hello, Mr. SpongeBob!\n").stdin("22").stdout("You are 22 years old\nIn twenty years you will be 42\n")\
+        check50.run("./basics").stdin("SpongeBob").stdout("Hello, SpongeBob!\n").stdin("22").stdout("You are 22 years old\nIn twenty years you will be 42\n")\
                 .stdin("7").stdin("6").stdin("3").stdin("4").stdin("1")\
                 .stdout("Your zip code is: 76341\nYour zip code reversed is: 14367")\
                 .exit(0)
