@@ -14,5 +14,5 @@ def compiles():
 @check50.check(compiles)
 def basic_test(self):
         """Basic test"""
-        check50.run("./bubblesort").stdout("Number of comparisons 10, number of swaps: 6\nSorted array: -19, 0, 19, 24, 77")\
+        check50.run("./bubblesort").stdout("Number of comparisons 10, number of swaps: 5\nSorted array: -11, -8, 19, 24, 77")\
                 .exit(0)
